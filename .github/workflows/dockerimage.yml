@@ -10,5 +10,7 @@ jobs:
 
     steps:
     - uses: actions/checkout@v1
+    - name: Pull Antlr
+      run: curl -O https://www.antlr.org/download/antlr-4.7.1-complete.jar
     - name: Build the Docker image
       run: docker build . --file Dockerfile --tag antlr4:latest
