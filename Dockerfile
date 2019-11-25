@@ -1,9 +1,10 @@
 FROM openjdk:8-jdk-alpine
 
 RUN apk add curl
-RUN curl -O https://www.antlr.org/download/antlr-4.7.1-complete.jar
-RUN mv antlr-4.7.1-complete.jar /usr/local/lib/antlr-4.7.1-complete.jar
-RUN chmod +r /usr/local/lib/antlr-4.7.1-complete.jar
+
+RUN curl -O https://www.antlr.org/download/antlr-4.7.1-complete.jar && \
+    mv antlr-4.7.1-complete.jar /usr/local/lib/antlr-4.7.1-complete.jar && \
+    chmod +r /usr/local/lib/antlr-4.7.1-complete.jar
 
 ENV CLASSPATH=".:/usr/local/lib/antlr-4.7.1-complete.jar:$CLASSPATH"
 
